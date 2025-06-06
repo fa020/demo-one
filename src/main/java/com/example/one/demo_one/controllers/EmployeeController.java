@@ -5,6 +5,8 @@ import java.time.LocalDate;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.one.demo_one.dto.EmployeeDTO;
@@ -37,6 +39,12 @@ public class EmployeeController {
         System.out.println("here 2");
         System.out.println(empID);
         return employeeService.getEmpById(empID);
+    }
+
+    @PostMapping(path="/emp/create")
+    public String createNewEmployee(@RequestBody EmployeeDTO employeeDTO){
+        System.out.println("create rout "+ employeeDTO);
+        return employeeService.createNewEmployee(employeeDTO);
     }
 
 }

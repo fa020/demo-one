@@ -1,5 +1,6 @@
 package com.example.one.demo_one.configuration;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,5 +20,10 @@ public class AppConfig {
     @ConditionalOnProperty(name = "project.mode", havingValue = "dev")
     public DB getDevDBBean() {
         return new DevDB();
+    }
+
+    @Bean
+    public ModelMapper getModelMapper(){
+        return new ModelMapper();
     }
 }
