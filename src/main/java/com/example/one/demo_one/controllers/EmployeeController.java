@@ -2,6 +2,7 @@ package com.example.one.demo_one.controllers;
 
 import java.time.LocalDate;
 // import java.util.Date;
+import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -45,6 +46,11 @@ public class EmployeeController {
     public String createNewEmployee(@RequestBody EmployeeDTO employeeDTO){
         System.out.println("create rout "+ employeeDTO);
         return employeeService.createNewEmployee(employeeDTO);
+    }
+    @GetMapping(path="/emp/get-all")
+    public List<EmployeeDTO> getAllEmp(){
+        System.out.println("get all emp rout ");
+        return employeeService.getAllEmp();
     }
 
 }
