@@ -16,7 +16,7 @@ public class DemoOneApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
 		// throw new UnsupportedOperationException("Unimplemented method 'run'");
-		db = new DevDB();
+
 		System.out.println(db.getData());
 
 	}
